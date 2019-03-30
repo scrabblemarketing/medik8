@@ -1,0 +1,127 @@
+define(
+    [
+        "jquery"
+    ],
+    function($) {
+        "use strict";
+
+        // Menu customization ( toogle sub menu for empty links # )
+        // -------------------------------------------------------------------------
+        $('.nav-main-menu .static-menu li > a[href$="#"], a[href$="/#/"]').click(function () {
+            event.preventDefault();
+            if ($('button.nav-toggle.hidden-lg').is(":visible")) {
+                $(this).toggleClass('active');
+                $(this).siblings('.toggle-menu').children('a').toggleClass('active');
+                $(this).parent().find('> ul').slideToggle();
+            }
+        });
+
+        // Product page featuring
+        // -------------------------------------------------------------------------
+        var tallest = 0;
+        var $carousel = $('.carousel');
+        if ($carousel.length > 0) {
+            $carousel.carousel({
+                interval: false
+            });
+
+            // Find the tallest one.
+            $('#carousel-container .item img').each(function () {
+                tallest = ($(this).height() > tallest) ?
+                    $(this).height() : tallest;
+            });
+
+            // Set all the heights to be the same as the tallest
+            $('#carousel-container .item').each(function () {
+                $(this).css('height', tallest + 'px');
+            });
+        }
+
+        // Accordion, add glyphicon and toggle it to plus or minus on click
+        // -------------------------------------------------------------------------
+        $('.panel-heading').append("<i class='glyphicon glyphicon-plus'></i>");
+        $('.panel-heading').on('click', function () {
+            if ($(this).hasClass("mdk8-clicked")) {
+                $(this).removeClass("mdk8-clicked");
+                $("i", this).removeClass().addClass("glyphicon glyphicon-plus");
+            } else {
+                $(this).addClass("mdk8-clicked");
+                $("i", this).removeClass().addClass("glyphicon glyphicon-minus");
+            }
+        });
+        // Glossary Open And Scroll
+        // -------------------------------------------------------------------------
+        $(document).ready(function () {
+            var grabbedUrl = document.location.toString();
+            var elementId = '#' + grabbedUrl.split('#')[1];
+
+            if (grabbedUrl.match('#')) {
+                ingridientOpenScroll(scrollToSection);
+            }
+
+            function ingridientOpenScroll(scroll) {
+                $(elementId).addClass('in');
+                $(elementId).siblings().addClass("mdk8-clicked");
+                $(elementId).siblings().children("i").removeClass().addClass("glyphicon glyphicon-minus");
+                scroll();
+            }
+
+            function scrollToSection() {
+                setTimeout(function () {
+                    $('html, body').animate({
+                        scrollTop: $(elementId).offset().top -
+                            100
+                    }, 1000);
+                }, 1500);
+            }
+        });
+    }
+);
+
+
+
+
+
+
+//Vanilla JS
+// Glossary Search Functionality
+// -------------------------------------------------------------------------
+function glossarySearch(search) {
+    search = search.toUpperCase();
+
+    ul = document.getElementById("tabs");
+    li = ul.getElementsByTagName('li');
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(search) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+// Tables Search Functionality
+// -------------------------------------------------------------------------
+function mdk8Search() {
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("mdk8-search-table");
+    filter = input.value.toUpperCase();
+    table = document.getElementsByClassName("mdk8-search-table");
+
+    for (x = 0; x < table.length; x++) {
+        tr = table[x].getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+}
