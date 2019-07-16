@@ -1,0 +1,13 @@
+[28-Mar-2019 19:33:24 America/Chicago] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home1/ab9036/public_html/medik8-2/productos.php on line 14
+[04-Apr-2019 17:14:58 America/Chicago] PHP Warning:  mysqli::mysqli(): (42000/1044): Access denied for user 'ab9036_soporte'@'localhost' to database 'ab9036_medik8' in /home1/ab9036/public_html/medik8-2/includes/funciones/conexion.php on line 3
+[04-Apr-2019 17:14:58 America/Chicago] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home1/ab9036/public_html/medik8-2/index.php on line 82
+[04-Apr-2019 17:14:58 America/Chicago] PHP Fatal error:  Call to a member function fetch_assoc() on null in /home1/ab9036/public_html/medik8-2/index.php on line 86
+[04-Apr-2019 17:15:12 America/Chicago] PHP Warning:  mysqli::mysqli(): (42000/1044): Access denied for user 'ab9036_soporte'@'localhost' to database 'ab9036_medik8' in /home1/ab9036/public_html/medik8-2/includes/funciones/conexion.php on line 3
+[04-Apr-2019 17:15:12 America/Chicago] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home1/ab9036/public_html/medik8-2/index.php on line 82
+[04-Apr-2019 17:15:12 America/Chicago] PHP Fatal error:  Call to a member function fetch_assoc() on null in /home1/ab9036/public_html/medik8-2/index.php on line 86
+[04-Apr-2019 17:15:21 America/Chicago] PHP Warning:  mysqli::mysqli(): (42000/1044): Access denied for user 'ab9036_soporte'@'localhost' to database 'ab9036_medik8' in /home1/ab9036/public_html/medik8-2/includes/funciones/conexion.php on line 3
+[04-Apr-2019 17:15:36 America/Chicago] PHP Warning:  mysqli::mysqli(): (42000/1044): Access denied for user 'ab9036_soporte'@'localhost' to database 'ab9036_medik8' in /home1/ab9036/public_html/medik8-2/includes/funciones/conexion.php on line 3
+[04-Apr-2019 17:16:01 America/Chicago] PHP Warning:  mysqli::mysqli(): (42000/1044): Access denied for user 'ab9036_soporte'@'localhost' to database 'ab9036_medik8' in /home1/ab9036/public_html/medik8-2/includes/funciones/conexion.php on line 3
+[04-Apr-2019 17:16:01 America/Chicago] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home1/ab9036/public_html/medik8-2/index.php on line 82
+[04-Apr-2019 17:16:01 America/Chicago] PHP Fatal error:  Call to a member function fetch_assoc() on null in /home1/ab9036/public_html/medik8-2/index.php on line 86
+[04-Apr-2019 17:18:30 America/Chicago] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home1/ab9036/public_html/medik8-2/productos.php on line 14
