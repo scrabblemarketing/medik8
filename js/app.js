@@ -78,32 +78,170 @@ $('.menu-caracteristicas li a').on('click', function(e) {
 
 
 const menusSecundario = document.querySelectorAll('.nav-second');
-const menuPrincipal = document.querySelectorAll('.menu-principal > ul > li > a');
+const menuPrincipal = document.querySelector('.menu-principal');
 
-menuPrincipal.forEach(menu => {
-    menu.addEventListener('mouseover', function(e) {
-        // $('.nav-second').hide();
-        // console.log(e.target);
+/*
+menuPrincipal.addEventListener('mouseover', function(e) {
+    
+    // console.log(e.target);
+    // menusSecundario.forEach(menu => {
+    //     menu.classList.remove('nav-active')
+    // })
 
-        const aHover = e.target.parentElement.querySelector('.nav-second');
+    const aHover = e.target.parentElement.querySelector('.nav-second');
+    // console.log(aHover);
+    
+    if (aHover !== null) {
+        aHover.classList.add('nav-active')
 
-        if (aHover !== null) {
-            aHover.style.display = 'flex';
-
-            aHover.addEventListener('mouseleave', function() {
-                aHover.style.display = 'none';
-            });
-
-        }
-
-    });
-
-})
-
-menusSecundario.forEach(menu => {
-
-    if (menu.childElementCount == 4) {
-        menu.style.width = '1342px';
+        // aHover.addEventListener('mouseleave', function() {
+        //     aHover.style.display = 'none'
+        // })
 
     }
+
 })
+*/
+menusSecundario.forEach(menu => {
+   
+    
+    if (menu.childElementCount == 4) {
+        menu.style.width = '1342px';
+    }
+
+
+
+    // menu.addEventListener('mouseleave', function() {
+    //     this.style.display = 'none'
+    // })
+})
+
+
+//// ACORDEON
+
+
+// $('.guardar').hide();
+let num=0;
+$('.acordeon ul li a').on('click',function(e){
+    e.preventDefault()
+    // const todos = $('.guardar').hide()
+    const info = $(this).parent().contents()[3];
+    // console.log(info)
+
+    if(num > 0){
+        info.classList.remove('mostrar')
+        info.classList.add('esconder')
+        num--
+
+    }else{
+        info.classList.remove('esconder')
+        info.classList.add('mostrar')
+        num++
+        
+    }
+    
+    console.log(num)
+    
+    
+    
+})
+
+console.log(num)
+
+
+
+
+$(document).on('click',function(){
+    
+    const boton = document.querySelector('#submit');
+
+
+    // boton.disabled = true;
+    function espaciosVacios(texto){
+
+        if(texto !== ''){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+    function confirmarPass(pass1, pass2){
+
+        if(pass1 === pass2){
+            boton.disabled = false;
+        }
+
+    }
+
+    const nombre= document.querySelector('#nombre')
+    const apellido= document.querySelector('#apellido')
+    const correo= document.querySelector('#correo')
+    const password= document.querySelector('#password')
+    const confirmar= document.querySelector('#confirmar')
+    const ac1= document.querySelector('#ac1')
+    const ac2= document.querySelector('#ac2')
+
+    
+
+    function aprobado(){
+        if(nombre !== '' &&
+           apellido !== '' &&
+           correo !== '' &&
+           password !== '' &&
+           confirmar !== ''){
+                return true;
+           }else{
+               return false;
+           }
+    }
+    function corroborar(){
+        let error;
+        if(nombre == ''){
+            error = nombre.parentElement.querySelector('.error')
+            error.style.color='red';
+            error.innerHTM='Este campo es requerido'
+        }
+        else if(apellido){
+            error = apellido.parentElement.querySelector('.error')
+            error.style.color='red';
+            error.innerHTM='Este campo es requerido'
+        }
+        else if(correo){
+            error = correo.parentElement.querySelector('.error')
+            error.style.color='red';
+            error.innerHTM='Este campo es requerido'
+        }
+        else if(password){
+            error = password.parentElement.querySelector('.error')
+            error.style.color='red';
+            error.innerHTM='Este campo es requerido'
+        }
+        else if(confirmar){
+            error = confirmar.parentElement.querySelector('.error')
+            error.style.color='red';
+            error.innerHTM='Este campo es requerido'
+        }
+    }
+    $('.form-registro').on("submit",function(){
+        console.log('algo')
+        const comprobar = aprobado();
+        if(comprobar){
+            boton.disabled = false;
+        }else{
+            console.log('no')
+            corroborar();
+        }
+    })
+
+})
+
+
+
+
+
+
+
+
+
+
