@@ -5,15 +5,15 @@
 <div class="container slider">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-        <div class="carousel-item active">
+        <!-- <div class="carousel-item active">
         <img src="img/slide1.jpg" class="d-block w-100" alt="">
-        </div>
-        <div class="carousel-item">
+        </div> -->
+        <div class="carousel-item active">
         <img src="img/slide2.jpg" class="d-block w-100" alt="">
         </div>
-        <div class="carousel-item">
+        <!-- <div class="carousel-item">
         <img src="img/slide3.jpg" class="d-block w-100" alt="...">
-        </div>
+        </div> -->
         <div class="carousel-item">
         <img src="img/slide4.jpg" class="d-block w-100" alt="...">
         </div>
@@ -45,23 +45,23 @@
         <h2>¿Cuál es su preocupación?</h2>
         <div class="row">
             <div class="col-md-4">
-                <a href="" class="botones-second text-center">Envejecimiento de la piel</a>
+                <a href="lista.php?categoria=1" class="botones-second text-center">Envejecimiento de la piel</a>
             </div>
             <div class="col-md-4">
-                <a href="" class="botones-second text-center">Pigmentación</a>
+                <a href="lista.php?categoria=4" class="botones-second text-center">Pigmentación</a>
             </div>
             <div class="col-md-4">
-                <a href="" class="botones-second text-center">Imperfecciones</a>
+                <a href="lista.php?categoria=2" class="botones-second text-center">Imperfecciones</a>
             </div>
             <div class="col-md-4">
-                <a href="" class="botones-second text-center">Recuperación</a>
+                <a href="lista.php?categoria=3" class="botones-second text-center">Recuperación</a>
             </div>
             <div class="col-md-4">
-                <a href="" class="botones-second text-center">Rojeces</a>
+                <a href="lista.php?categoria=6" class="botones-second text-center">Rojeces</a>
             </div>
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
                 <a href="" class="botones-second text-center">Poros Dilatados</a>
-            </div>
+            </div> -->
         </div>
     </div>
 
